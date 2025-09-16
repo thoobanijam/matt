@@ -132,8 +132,8 @@ export default function AboutUs() {
       </div>
 
       {/* Who We Are Section */}
-      <div style={{ width: "100%", border: "1px solid yellow", padding: "20px", height: "100vh", display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
-        <div style={{ border: "1px solid green", width: "35%", display: "flex", flexDirection: "column", margin: "15px" }}>
+      <div style={{ width: "100%", padding: "20px", height: "100vh", display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+        <div style={{  width: "35%", display: "flex", flexDirection: "column", margin: "15px" }}>
           <h1 style={{ fontWeight: "bold", color: "#2b7fff", backgroundColor: "#e7effc", padding: "10px 20px", borderRadius: "5px", width: "150px", margin: "10px" }}>Who We Are</h1>
           <h1 style={{ width: "400px", margin: "10px", fontSize: "2rem", color: "#082a5e", fontWeight: "bold" }}>
             Where Young Minds Meet {" "}
@@ -149,8 +149,9 @@ export default function AboutUs() {
           </button>
         </div>
 
-        <div style={{ border: "1px solid pink", width: "65%", display: "flex", justifyContent: "space-between", gap: "30px" }}>
-          <div style={{ border: "1px solid blue", width: "50%", position: "relative" }}>
+        <div style={{width: "65%", display: "flex", justifyContent: "space-between", 
+gap: "30px" }}>
+          <div style={{ width: "50%", position: "relative" }}>
             <div style={{ position: "absolute", top: "100px", right: "15px", zIndex: 1 }}>
               <img src="/img/Explore1.jpeg" style={{ width: "75%", borderRadius: "10px", height: "330px", marginLeft: "100px" }} />
             </div>
@@ -158,7 +159,7 @@ export default function AboutUs() {
               <img src="/img/dotted2.png" style={{ width: "80%", borderRadius: "10px", height: "125px", marginTop: "-50px", marginLeft: "30px" }} />
             </div>
           </div>
-          <div style={{ border: "1px solid gray", width: "50%", display: "flex", flexWrap: "wrap", justifyContent: "center", padding: "10px" }}>
+          <div style={{width: "50%", display: "flex", flexWrap: "wrap", justifyContent: "center", padding: "10px" }}>
             <img src="/img/Explore3.jpg" style={{ width: "80%", borderRadius: "10px", height: "250px" }} />
             <img src="/img/Explore2.jpeg" style={{ width: "80%", borderRadius: "10px", height: "250px" }} />
           </div>
