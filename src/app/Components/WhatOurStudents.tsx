@@ -43,13 +43,14 @@ const WhatOurStudents = () => {
   return (
     <div
       style={{
-        marginTop: "100px",
+        marginTop: "-50px",
         width: "100%",
         height: "80vh",
         backgroundColor: "#072655",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+
       }}
     >
       {/* image */}

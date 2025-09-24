@@ -19,9 +19,9 @@ const ForConcept = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        height: "80vh",
-        marginTop: "200px",
-        gap: "40px",       
+        height: "auto",
+        marginTop: "60px",
+        gap: "40px",     
 }}
     >
       {/* Left Side Image */}
@@ -121,24 +121,47 @@ zIndex:-1}}>
         {/* Heading */}
         <h1
   style={{
-    color: "#000000",
+    color: "#1e2939",
     fontSize: "32px",
     fontWeight: "bold",
     lineHeight: "1.3",
     maxWidth: "80%",
     marginTop: "10px",
+
   }}
 >
   From Concept to Career{" "}
-  <span
-    style={{
-      color: "#155dfc", // blue text
-      borderBottom: "6px solid #fdc700", 
-borderRadius: "6px",
-    }}
-  >
-    Engineering
-  </span>{" "}
+   <span
+  style={{fontSize:"32px",
+    color: "#155dfc",
+    textDecoration: "underline",
+    textDecorationColor: "yellow",
+    textDecorationThickness: "4px",
+    borderRadius: "1px",
+    fontFamily: "monospace", // typing font look
+    display: "inline-block",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    borderRight: "5px solid yellow", // cursor
+    width: "0ch", // start with 0
+    animation: "typing 2s steps(6, end) infinite alternate, blink 0.7s step-end infinite",
+  verticalAlign: "bottom",
+}}
+>
+  Engineering
+  <style>{`
+    @keyframes typing {
+      from { width: 0ch; }
+      to { width: 13.5ch; } /* length of "Future" */
+    }
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: yellow; }
+    }
+  `}</style>
+</span>
+
+{" "}
   Education that Delivers
 </h1>
 
@@ -196,7 +219,7 @@ borderRadius: "6px",
 
               {/* Title + Content */}
               <div style={{ textAlign: "left" }}>
-                <h2 style={{ margin: 0, fontSize: "18px", color: "#101828" }}>
+                <h2 style={{ margin: 0, fontSize: "18px", color: "#101828",fontWeight:"bold" }}>
                   {item.title}
                 </h2>
                 <p style={{ color: "#4a5577", fontSize: "14px", margin: 0 }}>

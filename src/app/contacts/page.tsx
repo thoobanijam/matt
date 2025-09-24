@@ -23,9 +23,11 @@ export default function Contacts() {
 
 return (
     <>
-<div style={{ marginTop: "130px", width: "100%", height: "450px", position: "relative" }}>
-        <img src="/img/breadcrumb_bg.jpg" style={{ width: "100%", height: "300px", objectFit: "cover" }} />
-        <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "300px", backgroundColor: "rgba(0,0,0,0.4)", zIndex: 1 }} />
+<div style={{}}>
+<div style={{  
+width: "100%", height: "320px", position: "relative" }}>
+        <img src="/img/breadcrumb_bg.jpg" style={{ width: "100%", height: "320px", objectFit: "cover" }} />
+        <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "320px", backgroundColor: "rgba(0,0,0,0.4)", zIndex: 1 }} />
         <div style={{ position: "absolute", top: "50px", left: "20px", zIndex: 2 }}>
           <h1 style={{ color: "#171717", fontSize: "40px", fontWeight: "bold", padding: "10px" }}>About Us</h1>
           <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "10px" }}>
@@ -41,17 +43,25 @@ return (
 justifyContent:"space-between",
 alignItems:"center",
 width:"100%",
-height:"100vh",
-padding:"120px",}}>
+minHeight:"50vh",
+paddingLeft:"120px",
+paddingRight:"120px",
+marginTop:"10px",
+}}>
 {/* left */}
 
 <div style={{
-width:"50%",}}>
+width:"50%",
+}}>
+
+
 <h1 style={{color:"#0a2540",
 fontSize:"40px",
 fontWeight:"bold",
 padding:"10px",
+marginTop:"10px",
 letterSpacing:"-1px"}}>Keep In Touch With Us</h1>
+
 <p style={{width:"450px",
 marginTop:"10px"}}>Reach out to us for course details, support, or any collaboration opportunities.
 
@@ -100,9 +110,11 @@ gap:"40px"
 </div>
 
 {/* right  */}
-<form style={{ width: '40%', padding: '20px',
+<form style={{ width: '40%', 
+padding: '20px',
 
-backgroundColor:"#f8f9fa", }}>
+backgroundColor:"#f8f9fa",
+marginTop:"20px" }}>
 
 <h1 style={{color:"#0a2540",
 fontSize:"40px",
@@ -189,7 +201,8 @@ backgroundColor:"white"
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  height: "70px", 
+  height: "80px", 
+
 }}>
   <div
     style={{
@@ -212,31 +225,28 @@ fontSize:"20px",padding:"10px"}}>MATT ENGINEERING SOLUTIONS</h1>
 </div>
 </div>
 {/*map address */}
-<div style={{
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  height: "50vh", 
-marginTop:"70px"
+{/* Map */}
+{/* Map */}
+<div style={{ width: "100%", padding: "30px" ,paddingBottom:"40px",
 }}>
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "center",
-flexDirection:"column",
-height: "70vh", 
-     
-   
-      width: "95%",
-      
-      
-margin:"20px"
-    }}
-  ><img src="/img/map.png"
-style={{width:"100%",
-height:"100%",
-border:"none"}}/>
- </div>
-</div></>
+  <img
+  src="/img/map2.png"
+  style={{
+    width: "100%",
+    display: "block", // important
+    height: "auto",
+    margin: 0,
+    padding: 0,
+    verticalAlign: "top", // removes extra inline spacing
+  }}
+/>
+</div>
+
+
+
+
+</div>
+
+</>
 );
 }

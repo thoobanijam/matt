@@ -15,8 +15,10 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 const router = useRouter()
   return (
-    <div style={{ width: '100%', display: 'flex', 
-flexDirection: 'column' }}>
+    <div style={{ width: '100%', 
+display: 'flex', 
+flexDirection: 'column',
+ }}>
       
       {/*  Keyframes for marquee */}
       <style>{`
@@ -31,17 +33,16 @@ flexDirection: 'column' }}>
         width: "100%",
         height: "50px",
         backgroundColor: '#2092ef',
-        overflow: "hidden",
-        position: "relative",
         display: "flex",
         alignItems: "center",
-position: "fixed",
-  top: 0,
-  left: 0,
-  right: 0,
-zIndex: 1000,
-
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        padding: "0 20px"
       }}>
+
         <div style={{
           display: "flex",
           alignItems: "center",
@@ -63,7 +64,8 @@ zIndex: 1000,
               color: '#2092ef',
               padding: '3px 10px',
               backgroundColor: "yellow",
-              fontWeight: "bold"
+              fontWeight: "bold",
+cursor:"pointer",
             }}>
               Next Batch: Sep 5th
             </button>
@@ -84,7 +86,8 @@ zIndex: 1000,
               color: '#2092ef',
               padding: '3px 10px',
               backgroundColor: "yellow",
-              fontWeight: "bold"
+              fontWeight: "bold",
+cursor:"pointer",
             }}>
               Hands-on Experience
             </button>
@@ -106,7 +109,8 @@ zIndex: 1000,
               color: '#2092ef',
               padding: '3px 10px',
               backgroundColor: "yellow",
-              fontWeight: "bold"
+              fontWeight: "bold",
+cursor:"pointer",
             }}>
           Career Boost
             </button>
@@ -115,32 +119,34 @@ zIndex: 1000,
       </div>
 
       {/* Navbar with Matt Academy on left and menu on right */}
-      <div style={{
+            <div style={{
         width: '100%',
         height: '80px',
         display: "flex",
         alignItems: 'center',
         justifyContent: 'space-between',
-        borderBottom: '1px solid gray',
-boxShadow: "s0 4px 12px gray",
+        
+        boxShadow: "0 4px 12px gray",
         padding: "0 20px",
-position: "fixed",
-  top: "50px",
-  left: 0,
-  right: 0,
-  backgroundColor: "white",
-  zIndex: 1000
-      }}>
-      <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+        position: "fixed",
+        top: "50px",
+        left: 0,
+        right: 0,
+        backgroundColor: "white",
+        zIndex: 1000
+      }}><div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
          <img src="/img/logo.png" style={{width:'30px',height:'30px'}}/> 
         <h1 style={{ fontSize: "25px", color: "oklCh(0.21 0.034 264.665)", fontWeight: "bold" ,paddingLeft:'20px',
                 fontFamily: "Rowdies, sans-serif",cursor:'pointer'
         }}>MATT ACADEMY  </h1></div>
 
-        <div style={{marginRight:"50px"}}
+        <div style={{marginRight:"70px"}}
 className="flex items-center gap-8 font-bold text-[16px]">
-          <h1 className="cursor-pointer text-black hover:text-blue-400 
-bg-transparent px-10 py-6 rounded hover:bg-blue-100"
+          <h1 
+className="cursor-pointer text-black hover:text-blue-400 
+  hover:underline hover:decoration-blue-400"
+
+
 onClick = { () => router.push("/")}>
             Home
           </h1>
@@ -150,7 +156,7 @@ onClick = { () => router.push("/")}>
             <h1
               onClick={() => setIsOpen(!isOpen)}
               className="cursor-pointer text-black hover:text-blue-400 px-3 py-2 
-rounded flex items-center gap-1 bg-transparent px-3 py-2 rounded hover:bg-blue-100"
+rounded flex items-center gap-1 hover:underline hover:decoration-blue-400 "
             >
               Course <IoIosArrowDown />
             </h1>
@@ -204,7 +210,7 @@ cursor: "pointer",marginTop:"10px" }}
 className="bg-transparent px-3 py-2 rounded hover:bg-blue-100">
                   <img src="/img/mern.png" alt="MernStack" 
 style={{ width: "35px", height: "35px" }} />
-                  <h1 onClick = { () => router.push("/Mern-stack")}
+                  <h1 onClick = { () => router.push("/mern-stack")}
 
 style={{ color: "#101828", fontSize: "15px" }}>Mernstack</h1>
                 </div>
@@ -213,12 +219,16 @@ style={{ color: "#101828", fontSize: "15px" }}>Mernstack</h1>
           </div>
 
           <h1 onClick = { () => router.push("/aboutUs")}
-className="cursor-pointer text-black hover:text-blue-400 px-3 py-2 rounded bg-transparent px-3 py-2 rounded hover:bg-blue-100">
+className="cursor-pointer text-black hover:text-blue-400 
+  hover:underline hover:decoration-blue-400"
+>
             About Us
           </h1>
 
           <h1 onClick = { () => router.push("/contacts")}
-className="cursor-pointer text-black hover:text-blue-400 px-3 py-2 rounded bg-transparent px-3 py-2 rounded hover:bg-blue-100">
+className="cursor-pointer text-black hover:text-blue-400 
+  hover:underline hover:decoration-blue-400"
+>
             Contact
           </h1>
         </div>

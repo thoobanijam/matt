@@ -112,7 +112,8 @@ const program = [
       style={{
         width: "100%",
         height: "110vh",
-        backgroundColor: "#b269f9",
+position: "relative",
+       overflow: "hidden",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -190,14 +191,16 @@ fontSize:"25px"}}/></div>
     </h1>
     <IoIosStar style={{ color: "white", fontSize: "25px" }} />
   </div>
-</div>   {/*  fixed: closes the top purple section properly */}
-
+</div>   
 
 {/*what you'll learn  */}
 {/*navbar div  */}
 <div style={{
 width:"100%",
-height:"90px",
+zIndex: 1000, 
+    position:"sticky",
+    top:"150px",
+
 }}>
 
 <div
@@ -207,10 +210,8 @@ height:"90px",
     borderRadius: "30px",
     marginTop: "20px",
     marginLeft:"45%",
-    zIndex: 10000,       
+          
     boxShadow: "0 4px 12px #dadbdc",
-    position:"sticky",
-    top:"150px",
     display:"flex",
     justifyContent:"center",
     alignItems:"center",
@@ -222,7 +223,9 @@ height:"90px",
 >
   {/* content here */}
 
-<h1
+<h1 onClick={() =>
+      document.getElementById("overview")?.scrollIntoView({ behavior: "smooth" })
+    }
   style={{borderRadius: "20px",padding: "10px 20px"}}
   className="bg-[#f5f5f5] hover:bg-[#8001bc] 
 transition-colors duration-300 text-[#364153] hover:text-white"
@@ -230,25 +233,37 @@ transition-colors duration-300 text-[#364153] hover:text-white"
   Overview
 </h1>
 
-<h1 style={{borderRadius: "20px",padding: "10px 20px"}}
+<h1 onClick={() =>
+      document.getElementById("modules")?.scrollIntoView({ behavior: "smooth" })
+    }
+style={{borderRadius: "20px",padding: "10px 20px"}}
   className="bg-[#f5f5f5] hover:bg-[#8001bc] 
 transition-colors duration-300 text-[#364153] hover:text-white"
 >
 Modules</h1>
 
-<h1 style={{borderRadius: "20px",padding: "10px 20px"}}
+<h1 onClick={() =>
+      document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })
+    }
+style={{borderRadius: "20px",padding: "10px 20px"}}
   className="bg-[#f5f5f5] hover:bg-[#8001bc] 
 transition-colors duration-300 text-[#364153] hover:text-white"
 >
 Features</h1>
 
-<h1 style={{borderRadius: "20px",padding: "10px 20px"}}
+<h1 onClick={() =>
+      document.getElementById("trainers")?.scrollIntoView({ behavior: "smooth" })
+    }
+style={{borderRadius: "20px",padding: "10px 20px"}}
   className="bg-[#f5f5f5] hover:bg-[#8001bc] 
 transition-colors duration-300 text-[#364153] hover:text-white"
 >
 Trainers</h1>
 
-<h1 style={{borderRadius: "20px",padding: "10px 20px"}}
+<h1 onClick={() =>
+      document.getElementById("review")?.scrollIntoView({ behavior: "smooth" })
+    }
+style={{borderRadius: "20px",padding: "10px 20px"}}
   className="bg-[#f5f5f5] hover:bg-[#8001bc] 
 transition-colors duration-300 text-[#364153] hover:text-white"
 >
@@ -260,9 +275,10 @@ Review</h1>
 justifyContent:"space-between",
 padding:"20px",
 width:"100%",
-height:"420vh",
+minHeight:"450vh",
 backgroundColor:"#f9fafb",
-marginBotom:"120vh",
+marginBottom:"120px",
+
 
 
 
@@ -303,6 +319,7 @@ height:"50px",
 {/* trophy */}
 <div style={{display:"flex",flexDirection:"row",
 alignItems: "center",marginTop: "20px",gap: "10px"}}>
+
 <FaTrophy style={{color:"gold",fontSize:"15px"}}/>
 <h1 style={{color:"#4a5565",fontSize:"15px"}}>100% Placement assistance</h1>
 <FaTrophy style={{color:"gold",fontSize:"15px"}}/>
@@ -384,7 +401,7 @@ padding: "20px",gap:"120px" }}>
     </div>
   )}
 </div>
-</div> {/*  closes left card */}
+</div> 
 
 
 {/*right side  */}
@@ -399,7 +416,8 @@ padding: "20px",gap:"120px" }}>
 boxShadow: "0 4px 12px #dadbdc", 
       }}
 >
-<div style={{width:"100%"}}>
+<div id="overview"
+style={{width:"100%"}}>
   <h1 style={{color: "#101828",fontSize: "30px",fontWeight: "bold"}}>
     What you'll learn
   </h1>
@@ -598,16 +616,18 @@ listStyleType: "disc",
   )}
 
 </div></div>
-{/*closed upto show more  COURSE CONTENT START  */}
-<div style={{dispaly:"flex",
+
+<div id="modules"
+style={{display:"flex",
 border:"1px solid black",
 borderRadius:"25px",
 width:"100%",
-height:"165vh",
+MinHeight:"auto",
 padding:"30px",
 backgroundColor:"white",
 marginTop:"70px",
-boxShadow: "0 4px 12px #dadbdc", }}>
+boxShadow: "0 4px 12px #dadbdc",
+flexDirection:"column" }}>
 
 <h1 style={{fontSize:"23px",
 fontWeight:"bold",
@@ -662,14 +682,10 @@ fontSize:"18px"}}>Complete Curriculum</h1>
 <p style={{color:"#981efa",
 fontWeight:"bold",
 fontSize:"25px"}}>8</p>
-</div>{/*-----------------div closed--------*/}
-{/*python closed  */}
+</div>
 
 </div>
-{/*COURSES CONTENT END  */}
-
-{/*program sturcture start */}
-<div
+<div id="features"
       style={{
         border: "1px solid black",
         borderRadius: "25px",
@@ -717,11 +733,9 @@ fontSize:"25px"}}>8</p>
     </div>
 
   
-{/*program sturcture closed  */}
 
-{/* for enquiry contact start skeela yirunthu */}
-
-<div style={{width:"100%",
+<div id="trainers"
+style={{width:"100%",
 height:"130vh",
 border:"1px solid black",
 borderRadius:"20px",
@@ -774,7 +788,6 @@ marginTop:'60px',
     </div>
   ))}
 </div>
-{/*input close mealavarikum  */}
 <p style={{ fontSize: "14px", color: "#333",width:"55%" }}>
   By registering I accept the{" "}
   <span style={{ color: "#9810fa", cursor: "pointer" }}>TnC</span> and{" "}
@@ -783,7 +796,7 @@ marginTop:'60px',
 </p>
 
 
-{/* check mark keela  */}
+
 <div style={{display:"flex",
 flexDirection:"row",
 border:"1px solid #d1d5dc",
@@ -828,10 +841,7 @@ fontSize:"25px",
 
 </div>  </div>
 
-{/* check mark closed meala varikum  */}
-
-{/*button kela yirunthu */}
-<div 
+<div id="review"
 style={{color:"white",
 width:"55%",
 borderRadius:"30px",
@@ -842,7 +852,8 @@ alignItems:"center",
 padding:"15px 20px",
 fontWeight:"bold",
 backgroundColor: checked ? "#8800e3" : "#c883f8", 
-transition: "0.3s ease",
+cursor:"pointer",
+transition: "0.3s ease-in-out",
 
 }}>
 <h1 style={{marginRight:"10px"}}>
@@ -852,16 +863,10 @@ CONTACT NOW</h1>
 
 </div>
 
-{/*button mela varaikum */}
 </div>
 
-{/* for enquiry contact closed meala varikum */}
 
 
-</div> {/* closes right side card */}
-</div> {/*  closes apply-now flex container */}
- {/*  closes navbar wrapper */}
-</>
+</div> </div> </>
   );
 }
-{/*without any changing of coding measurment alignment coding just give enitre coding that i need last section component go last and out of green div  */}

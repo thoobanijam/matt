@@ -31,9 +31,9 @@ const OurInstaFeed = () => {
         width: "100%",
         display: "flex",
         justifyContent: "center",
-        marginTop: "30px",
-        height: "80vh",
-        
+        marginTop: "-50px",
+        height: "auto",
+
       }}
     >
       {/* Header */}
@@ -44,9 +44,12 @@ const OurInstaFeed = () => {
           height: "100px",
           textAlign: "center",
           marginTop: "20px",
+ 
         }}
       >
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "15px" }}>
+        <div style={{ display: "flex", 
+justifyContent: "center", alignItems: "center", 
+gap: "15px" }}>
           <h1 style={{ color: "#dc6600", fontSize: "40px", fontWeight: "bold" }}>
             Our Instagram{" "}
             <span style={{ color: "#574ffb" }}>F</span>
@@ -63,8 +66,7 @@ const OurInstaFeed = () => {
 
       {/* Left image (blurred, slightly rotated) */}
 <div
-  style={{
-    position: "absolute",
+  style={{    position: "absolute",
     top: "120px",
     left: "10%",
     width: "320px",

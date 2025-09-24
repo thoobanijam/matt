@@ -87,7 +87,9 @@ function CounterCard({ icon, start, end, animate, title }) {
   }, [animate, start, end]);
 
   return (
-    <div style={{ marginTop: "110px", display: "flex", width: "300px", height: "300px", backgroundColor: "white", borderRadius: "10px", gap: "20px", flexDirection: "column", justifyContent: "center", alignItems: "center", boxShadow: "0 4px 8px rgba(0,0,0,0.1)" }}>
+    <div style={{ marginTop: "110px", display: "flex", width: "300px", height: "300px", 
+backgroundColor: "white", borderRadius: "10px", gap: "20px", flexDirection: "column", 
+justifyContent: "center", alignItems: "center", boxShadow: "0 4px 8px rgba(0,0,0,0.1)" }}>
       <h1 style={{ color: "#155dfc", fontSize: "50px" }}>{icon}</h1>
       <h1 style={{ color: "#082a5e", fontWeight: "bold", fontSize: "20px" }}>{count}</h1>
       <p style={{ color: "#39557e" }}>{title}</p>
@@ -118,7 +120,7 @@ export default function AboutUs() {
   return (
     <>
       {/* Header Section */}
-      <div style={{ marginTop: "130px", width: "100%", height: "450px", position: "relative" }}>
+      <div style={{  width: "100%", height: "300px", position: "relative" ,}}>
         <img src="/img/aboutMatt.jpeg" style={{ width: "100%", height: "300px", objectFit: "cover" }} />
         <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "300px", backgroundColor: "rgba(0,0,0,0.4)", zIndex: 1 }} />
         <div style={{ position: "absolute", top: "50px", left: "20px", zIndex: 2 }}>
@@ -132,8 +134,13 @@ export default function AboutUs() {
       </div>
 
       {/* Who We Are Section */}
-      <div style={{ width: "100%", padding: "20px", height: "100vh", display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
-        <div style={{  width: "35%", display: "flex", flexDirection: "column", margin: "15px" }}>
+      <div style={{ 
+width: "100%", padding: "20px", height: "85vh", 
+display: "flex", flexDirection: "row", 
+justifyContent: "space-between",
+marginBottom:"50px", }}>
+        
+<div style={{  width: "35%", display: "flex", flexDirection: "column", margin: "15px", }}>
           <h1 style={{ fontWeight: "bold", color: "#2b7fff", backgroundColor: "#e7effc", padding: "10px 20px", borderRadius: "5px", width: "150px", margin: "10px" }}>Who We Are</h1>
           <h1 style={{ width: "400px", margin: "10px", fontSize: "2rem", color: "#082a5e", fontWeight: "bold" }}>
             Where Young Minds Meet {" "}
@@ -167,7 +174,13 @@ gap: "30px" }}>
       </div>
 
       {/* Achievements Section */}
-      <div id="counter-section" style={{ width: "100%", padding: "10px", minHeight: "120vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", backgroundImage: "url('/img/Factbg.jpg')", backgroundSize: "cover", backgroundPosition: "center", position: "relative", marginTop: "10px" }}>
+      <div id="counter-section" style={{width: "100%", 
+padding: "10px", minHeight: "30vh", display: "flex", flexDirection: "column", 
+alignItems: "center", justifyContent: "center", 
+backgroundImage: "url('/img/Factbg.jpg')", 
+backgroundSize: "cover", backgroundPosition: "center", 
+position: "relative", }}>
+
         <h1 style={{ color: "#2b7fff", padding: "5px 10px", backgroundColor: "#e7effc", fontWeight: "bold", marginTop: "80px" }}>Our Achievements</h1>
         <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", justifyContent: "center", marginTop: "50px" }}>
           {cards.map((card, index) => (

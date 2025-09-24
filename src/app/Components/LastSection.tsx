@@ -1,43 +1,56 @@
-'use client'
-import React from "react";
-import { FaFacebookF } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
+"use client";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
+import { FaFacebookF, FaWhatsapp, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { BsYoutube } from "react-icons/bs";
+
+function NavLink({ label, href }: { label: string; href: string }) {
+  const router = useRouter();
+  const [hover, setHover] = useState(false);
+
+  return (
+    <p
+      style={{
+        color: "#b2bdcd",
+        fontWeight: "bold",
+        fontSize: "15px",
+        cursor: "pointer",
+        marginTop: "20px",
+        transition: "all 0.3s ease",
+        transform: hover ? "translateX(10px)" : "translateX(0px)",
+      }}
+      onClick={() => router.push(href)}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      {hover ? `-${label}` : label}
+    </p>
+  );
+}
 
 const LastSection = () => {
   return (
-    <>
+    <footer
+      style={{
+        width: "100%",
+        backgroundColor: "#061e43",
+        display: "flex",
+        flexDirection: "column",
+        padding: "20px",
+      }}
+    >
+      {/* Top content */}
       <div
         style={{
-          width: "100%",
-          height: "70vh",
-          backgroundColor: "#061e43",
-          marginTop: "450px",
           display: "flex",
           justifyContent: "space-between",
-          alignItems: "center",
-          padding: "40px",
           flexWrap: "wrap",
+          paddingBottom: "40px",
         }}
       >
-        {/* company info */}
-        <div
-          style={{
-            width: "350px",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <div
-            style={{
-              width: "300px",
-              display: "flex",
-              alignItems: "center",
-              padding: "10px",
-            }}
-          >
+        {/* Company info */}
+        <div style={{ width: "350px", display: "flex", flexDirection: "column" }}>
+          <div style={{ display: "flex", alignItems: "center", padding: "10px 0" }}>
             <img
               src="/img/logo.png"
               alt="Logo"
@@ -45,7 +58,6 @@ const LastSection = () => {
                 border: "1px solid lightblue",
                 width: "40px",
                 height: "40px",
-                objectFit: "contain",
                 borderRadius: "50%",
               }}
             />
@@ -60,209 +72,98 @@ const LastSection = () => {
               MATT ACADEMY
             </h1>
           </div>
-
-          <div style={{ width: "250px", marginTop: "10px" }}>
-            <p style={{ color: "#b2bdcd", marginTop: "10px" }}>
-              3rd, floor, Pillars Gate,
-              <br />
-              Vadasery, Kanyakumari Dist,
-              <br />
-              Tamil Nadu 629001
-            </p>
-            <p style={{ color: "#b2bdcd", marginTop: "10px" }}>+91 7305197833</p>
-            <p style={{ color: "#b2bdcd", marginTop: "10px" }}>+91 9486178103</p>
-            <p style={{ color: "#b2bdcd", marginTop: "10px" }}>
-              matt@mattengg.com
-            </p>
-
-            <div
-              style={{
-                color: "#b2bdcd",
-                marginTop: "10px",
-                display: "flex",
-                flexDirection: "row",
-                gap: "20px",
-                fontSize: "20px",
-              }}
-            >
-              <FaFacebookF />
-              <FaWhatsapp />
-              <FaInstagram />
-              <FaLinkedinIn />
-              <BsYoutube />
-            </div>
+          <p style={{ color: "#b2bdcd", marginTop: "10px" }}>
+            3rd, floor, Pillars Gate, Vadasery, Kanyakumari Dist, Tamil Nadu 629001
+          </p>
+          <p style={{ color: "#b2bdcd", marginTop: "10px" }}>+91 7305197833</p>
+          <p style={{ color: "#b2bdcd", marginTop: "10px" }}>+91 9486178103</p>
+          <p style={{ color: "#b2bdcd", marginTop: "10px" }}>matt@mattengg.com</p>
+          <div
+            style={{
+              display: "flex",
+              gap: "20px",
+              marginTop: "15px",
+              fontSize: "20px",
+              color: "#b2bdcd",
+            }}
+          >
+            <FaFacebookF />
+            <FaWhatsapp />
+            <FaInstagram />
+            <FaLinkedinIn />
+            <BsYoutube />
           </div>
         </div>
 
-        {/* resource */}
-        <div
-          style={{
-            width: "200px",
-            display: "flex",
-            flexDirection: "column",
-               marginBottom: "110px", 
-          }}
-        >
-          <h1 style={{ color: "#b2bdcd", fontWeight: "bold", fontSize: "20px" }}>
-            Resourse
-          </h1>
-          <p
-            style={{
-              color: "#b2bdcd",
-              fontWeight: "bold",
-              fontSize: "15px",
-              cursor: "pointer",
-              marginTop: "40px",
-            }}
-          >
-            Home
-          </p>
-          <p
-            style={{
-              color: "#b2bdcd",
-              fontWeight: "bold",
-              fontSize: "15px",
-              cursor: "pointer",
-              marginTop: "20px",
-            }}
-          >
-            About Us
-          </p>
-          <p
-            style={{
-              color: "#b2bdcd",
-              fontWeight: "bold",
-              fontSize: "15px",
-              cursor: "pointer",
-              marginTop: "20px",
-            }}
-          >
-            Contact Us
-          </p>
+        {/* Resource */}
+        <div style={{ width: "200px", display: "flex", flexDirection: "column", marginTop: "20px" }}>
+          <h1 style={{ color: "#b2bdcd", fontWeight: "bold", fontSize: "20px" }}>Resource</h1>
+          <NavLink label="Home" href="/" />
+          <NavLink label="About Us" href="/aboutUs" />
+          <NavLink label="Contact Us" href="/contacts" />
         </div>
 
-        {/* courses */}
-        <div
-          style={{
-            width: "200px",
-            display: "flex",
-            flexDirection: "column",
-            marginBottom: "155px",
-          }}
-        >
-          <h1 style={{ color: "#b2bdcd", fontWeight: "bold", fontSize: "20px" }}>
-            Courses
-          </h1>
-          <p
-            style={{
-              color: "#b2bdcd",
-              fontWeight: "bold",
-              fontSize: "15px",
-              cursor: "pointer",
-              marginTop: "40px",
-            }}
-          >
-            Python
-          </p>
-          <p
-            style={{
-              color: "#b2bdcd",
-              fontWeight: "bold",
-              fontSize: "15px",
-              cursor: "pointer",
-              marginTop: "20px",
-            }}
-          >
-            MernStack
-          </p>
+        {/* Courses */}
+        <div style={{ width: "200px", display: "flex", flexDirection: "column", marginTop: "20px" }}>
+          <h1 style={{ color: "#b2bdcd", fontWeight: "bold", fontSize: "20px" }}>Courses</h1>
+          <NavLink label="Python" href="/courses/python-fullstack-development" />
+          <NavLink label="MernStack" href="/mern-stack" />
         </div>
 
-        {/* working hours */}
-        <div
-          style={{
-            width: "200px",
-            display: "flex",
-            flexDirection: "column",
-            marginBottom: "50px",
-          }}
-        >
-          <h1
-            style={{
-              color: "#b2bdcd",
-              fontWeight: "bold",
-              fontSize: "20px",
-              marginTop: "20px",
-            }}
-          >
+        {/* Working hours */}
+        <div style={{ width: "200px", display: "flex", flexDirection: "column", marginTop: "20px" }}>
+          <h1 style={{ color: "#b2bdcd", fontWeight: "bold", fontSize: "20px", marginBottom: "20px" }}>
             Working Hours
           </h1>
-
           <div
             style={{
               display: "flex",
               justifyContent: "space-between",
               borderBottom: "1px solid #b2bdcd",
+              paddingBottom: "10px",
+              marginBottom: "10px",
             }}
           >
-            <p style={{ color: "#b2bdcd", marginTop: "40px" }}>Mon - Fri </p>
-            <p style={{ color: "#b2bdcd", marginTop: "40px" }}>
-              9.00AM - 5.00PM
-            </p>
+            <p style={{ color: "#b2bdcd" }}>Mon - Fri</p>
+            <p style={{ color: "#b2bdcd" }}>9.00AM - 5.00PM</p>
           </div>
-
           <div
             style={{
               display: "flex",
               justifyContent: "space-between",
               borderBottom: "1px solid #b2bdcd",
+              paddingBottom: "10px",
+              marginBottom: "10px",
             }}
           >
-            <p style={{ color: "#b2bdcd", marginTop: "40px" }}>Saturday </p>
-            <p style={{ color: "#b2bdcd", marginTop: "40px" }}>
-              10.00AM - 4.00PM
-            </p>
+            <p style={{ color: "#b2bdcd" }}>Saturday</p>
+            <p style={{ color: "#b2bdcd" }}>10.00AM - 4.00PM</p>
           </div>
-
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              borderBottom: "1px solid #b2bdcd",
-              marginTop: "20px",
-            }}
-          >
-            <p style={{ color: "#b2bdcd", marginTop: "20px" }}>Sunday </p>
-            <p style={{ color: "#b2bdcd", marginTop: "20px" }}>Holiday</p>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <p style={{ color: "#b2bdcd" }}>Sunday</p>
+            <p style={{ color: "#b2bdcd" }}>Holiday</p>
           </div>
         </div>
       </div>
 
-      {/* Horizontal line across the full width */}
+      {/* Bottom copyright */}
       <div
         style={{
-          width: "100%",
-          height: "1px",
-          backgroundColor: "#b2bdcd",
-position:"absolute",
-bottom:"-880%"
+          display: "flex",
+          justifyContent: "space-between",
+          padding: "10px 0",
+          borderTop: "1px solid #b2bdcd",
+          marginTop: "20px",
+          color: "#b2bdcd",
+          fontWeight: "bold",
+          fontSize: "15px",
         }}
-
-      />
-<div style={{display:"flex",
-justifyContent:"space-between",
-paddingLeft:"40px",
-paddingRight:"40px",
-paddingBottom:"30px",
-backgroundColor: "#061e43",}}>
-<p style={{color:"#b2bdcd",fontWeight:"bold",fontSize:"15px"}}>
-Copyright  2025 MATT. All Rights Reserved.</p>
-
-<p style={{color:"#b2bdcd",fontWeight:"bold",fontSize:"15px"}}> 
-Privacy Policy Tearms  & Conditions</p>
-
-</div>
-    </>
+      >
+        <p>Copyright 2025 MATT. All Rights Reserved.</p>
+        <p>Privacy Policy Terms & Conditions</p>
+      </div>
+    </footer>
   );
 };
 
-export default LastSection;
+export default LastSection;

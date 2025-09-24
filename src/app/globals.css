@@ -34,6 +34,18 @@ html, body {
     --foreground: #ededed;
   }
 }
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px); /* a bit more movement */
+  }
+}
+
+.float-icon {
+  animation: floatUpDown 2s ease-in-out infinite;
+}
 
 body {
   background: var(--background);

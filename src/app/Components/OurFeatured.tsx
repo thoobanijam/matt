@@ -69,8 +69,9 @@ const OurFeatured = () => {
       style={{
         width: "100%",
         minHeight: "80vh",
-        marginTop: "150px",
+        marginTop: "10px",
         padding: "20px",
+
       }}
     >
       {/* Header */}

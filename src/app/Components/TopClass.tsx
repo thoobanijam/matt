@@ -36,7 +36,7 @@ const TopClass = () => {
   return (
     <div
       style={{
-        marginTop: "80px",
+        marginTop: "-40px",
         width: "100%",
         minHeight: "80vh",
         display: "flex",

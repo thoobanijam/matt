@@ -65,7 +65,7 @@ const youtubecards = [
     time: "22:15",
     url: "https://www.youtube.com/watch?v=wCdk6kESEqE",
     content: "AI PROJECT IDEAS IN TAMIL | ML PROJECT IDEAS IN TAMIL",
-    title: "Comprehensive guide to database optimization techniques for high-performance applications.",
+    title: "Comprehensive guide to database optimization techniques for high",
     icon: (
       <>
         <PiEyeLight /> 45.2k views &nbsp;
@@ -80,9 +80,10 @@ const youtubecards = [
   return (
     <>
       {/* Header */}
-      <div style={{ width: "100%", height: "80vh", display: "flex", marginTop: "400px", flexDirection: "column" }}>
-        <div style={{ width: "400px", height: "70px", display: "flex", alignItems: "center", padding: "10px", gap: "15px" }}>
-          <div style={{ width: "60px", height: "60px", borderRadius: "10px", backgroundColor: "red", display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <div style={{ 
+width: "100%", height: "150vh", display: "flex", marginTop: "600px", flexDirection: "column" }}>
+        <div style={{ width: "400px", height: "auto", display: "flex", alignItems: "center", padding: "10px", gap: "15px" }}>
+          <div style={{ width: "60px", height: "auto", borderRadius: "10px", backgroundColor: "red", display: "flex", justifyContent: "center", alignItems: "center" }}>
             <SlSocialYoutube style={{ fontSize: "30px", color: "white" }} />
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
